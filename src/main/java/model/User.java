@@ -11,9 +11,12 @@ public class User {
     private int id;
     private String firstName;
     private String lastName;
-    @Column(unique = true)
     private String password;
+    @Column(unique = true)
     private String email;
+
+    public User() {
+    }
 
     public User(int id, String firstName, String lastName, String password, String email) {
         this.id = id;

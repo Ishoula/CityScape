@@ -16,7 +16,7 @@
     <div class="relative bg-white/90 p-10 rounded-3xl shadow-2xl w-full max-w-md backdrop-blur-md">
         <div class="text-center mb-8">
             <a href="${pageContext.request.contextPath}/admin/" class="text-3xl font-bold text-blue-600">
-                <i class="fa-solid fa-map-location-dot"></i> Wanderer
+                <i class="fa-solid fa-map-location-dot"></i> CityScape
             </a>
             <h2 class="text-2xl font-bold text-gray-800 mt-4">Welcome Back</h2>
             <p class="text-gray-500">Login to manage your trips</p>

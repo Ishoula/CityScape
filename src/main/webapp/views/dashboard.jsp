@@ -1,10 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Travel Dashboard | Wanderer</title>
+    <title>Admin Dashboard| CityScape</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -13,7 +13,7 @@
     <aside class="w-64 bg-slate-900 text-white hidden md:flex flex-col">
         <div class="p-6">
             <a href="${pageContext.request.contextPath}/admin/" class="text-2xl font-bold text-blue-400">
-                <i class="fa-solid fa-map-location-dot mr-2"></i>Wanderer
+                <i class="fa-solid fa-map-location-dot mr-2"></i>CityScape
             </a>
         </div>
         <nav class="flex-1 px-4 space-y-2">

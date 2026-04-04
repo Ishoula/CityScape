@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public Optional<User> register(String firstName, String lastName, String email, String rawPassword) {
         String hashedPassword = BCrypt.hashpw(rawPassword, BCrypt.gensalt());
-        User newUser = new User(firstName, lastName, email, hashedPassword);
+        User newUser = new User(firstName, lastName, hashedPassword, email);
 
         boolean success = userRepo.save(newUser);
         if (success) {

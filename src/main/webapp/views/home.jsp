@@ -16,7 +16,7 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <a href="${pageContext.request.contextPath}/admin/" class="text-2xl font-bold text-blue-600">
-                        <i class="fa-solid @WebServlet("/admin/*")-map-location-dot mr-2"></i>Wanderer
+                        <i class="fa-solid @WebServlet("/admin/*")-map-location-dot mr-2"></i>CityScape
                     </a>
                 </div>
 
@@ -110,7 +110,7 @@
 
     <footer class="bg-gray-900 text-white py-12 mt-10">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="mb-4 text-gray-400">&copy; 2026 Global Wanderer. All rights reserved.</p>
+            <p class="mb-4 text-gray-400">&copy; 2026 Global CityScape. All rights reserved.</p>
             <div class="flex justify-center space-x-6">
                 <a href="#" class="hover:text-blue-500"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="hover:text-blue-500"><i class="fa-brands fa-instagram"></i></a>
