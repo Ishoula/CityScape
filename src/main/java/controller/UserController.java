@@ -55,10 +55,12 @@ public class UserController extends HttpServlet {
     }
 
     private void showDashboard(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getSession().getAttribute("user") == null) {
+        HttpSession session=req.getSession(false);
+        if (session==null||session.getAttribute("user") == null) {
             resp.sendRedirect(req.getContextPath() + "/admin/login");
             return;
         }
+
         showPage(req, resp, "dashboard.jsp");
     }
 
@@ -87,13 +89,16 @@ public class UserController extends HttpServlet {
     }
 
     private void handleLogout(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        req.getSession().invalidate();
+        req.getSession(false).invalidate();
         resp.sendRedirect(req.getContextPath() + "/admin/login");
     }
 
     private void handleDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String email = req.getParameter("email");
         if (userService.deleteAccount(email)) {
+
+            HttpSession session=req.getSession(false);
+            if(session!=null) session.invalidate();
             resp.sendRedirect(req.getContextPath() + "/admin/login?msg=deleted");
         }
     }
