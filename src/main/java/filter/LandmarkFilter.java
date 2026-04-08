@@ -29,16 +29,21 @@ public class LandmarkFilter implements Filter {
 
         String pathInfo = req.getPathInfo();
 
-        boolean isAdminAction = (pathInfo != null && pathInfo.startsWith("/admin/"));
+        boolean isProtectedLandmarkAction = pathInfo != null && (
+                pathInfo.equals("/newLandmark") ||
+                pathInfo.equals("/editLandmark") ||
+                pathInfo.equals("/deleteLandmark") ||
+                pathInfo.equals("/insertLandmark") ||
+                pathInfo.equals("/updateLandmark")
+        );
 
-        if (isAdminAction) {
+        if (isProtectedLandmarkAction) {
             HttpSession session = req.getSession(false);
             boolean isLoggedIn = (session != null && session.getAttribute("user") != null);
 
             if (!isLoggedIn) {
-
                 res.sendRedirect(req.getContextPath() + "/admin/login");
-                return; // Stop the filter chain here
+                return;
             }
         }
 

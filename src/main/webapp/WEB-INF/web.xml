@@ -5,6 +5,6 @@
 <web-app>
   <display-name>CityScape</display-name>
   <welcome-file-list>
-    <welcome-file>views/home.jsp</welcome-file>
+    <welcome-file>landmark/listLandmarks</welcome-file>
   </welcome-file-list>
 </web-app>

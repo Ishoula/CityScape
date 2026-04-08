@@ -15,16 +15,16 @@
             <h1 class="text-2xl font-bold mb-10 text-blue-400">CityScape Admin</h1>
             <nav class="space-y-4">
                 <a href="#" class="block py-2.5 px-4 rounded bg-blue-600">Dashboard</a>
-                <a href="${pageContext.request.contextPath}/admin/landmarks/add" class="block py-2.5 px-4 rounded hover:bg-gray-800 transition">Add Landmark</a>
-                <a href="${pageContext.request.contextPath}/admin/logout" class="block py-2.5 px-4 rounded text-red-400 hover:bg-red-900/20">Logout</a>
+                <a href="<c:url value='/landmark/newLandmark'/>" class="block py-2.5 px-4 rounded hover:bg-gray-800 transition">Add Landmark</a>
+                <a href="<c:url value='/admin/logout'/>" class="block py-2.5 px-4 rounded text-red-400 hover:bg-red-900/20">Logout</a>
             </nav>
         </aside>
 
         <main class="flex-1 p-8">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-3xl font-bold text-gray-800">Landmarks Management</h2>
-                <a href="<c:url value='landmark/admin/newLandmark'"
-                   class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-bold shadow-lg transition">
+                <a href="<c:url value='/landmark/newLandmark'/>"
+                   class="bg-blue-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-bold shadow-lg transition">
                     <i class="fa-solid fa-plus mr-2"></i>Add New Landmark
                 </a>
             </div>

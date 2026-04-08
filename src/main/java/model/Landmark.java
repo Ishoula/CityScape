@@ -15,6 +15,10 @@ public class Landmark {
     private String longitude;
     private String imagePath;
 
+    public Landmark(){
+
+    }
+
     public Landmark(int id, String name, Category category, String description, String latitude, String longitude, String imagePath) {
         this.id = id;
         this.name = name;

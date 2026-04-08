@@ -39,15 +39,15 @@ public class LandmarkController extends HttpServlet {
         String action = req.getPathInfo();
 
         if (action == null || action.equals("/")) {
-            res.sendRedirect(req.getContextPath() + "/landmark/list");
+            res.sendRedirect(req.getContextPath() + "/landmark/listLandmarks");
             return;
         }
 
         switch (action) {
             case "/listLandmarks"      -> listLandmarks(req, res);
-            case "/admin/newLandmark"       -> showNewForm(req, res);
-            case "/admin/editLandmark"      -> showEditForm(req, res);
-            case "/admin/deleteLandmark"    -> handleDelete(req, res);
+            case "/newLandmark"       -> showNewForm(req, res);
+            case "/editLandmark"      -> showEditForm(req, res);
+            case "/deleteLandmark"    -> handleDelete(req, res);
             case "/category"  -> listByCategory(req, res);
             default -> res.sendError(HttpServletResponse.SC_NOT_FOUND);
         }
@@ -60,8 +60,8 @@ public class LandmarkController extends HttpServlet {
         String action = req.getPathInfo();
 
         switch (action) {
-            case "/admin/insertLandmark" -> handleInsert(req, res);
-            case "/admin/updateLandmark" -> handleUpdate(req, res);
+            case "/insertLandmark" -> handleInsert(req, res);
+            case "/updateLandmark" -> handleUpdate(req, res);
             default -> res.sendError(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
         }
     }

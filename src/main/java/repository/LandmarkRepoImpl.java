@@ -25,7 +25,7 @@ public class LandmarkRepoImpl implements LandmarkRepo{
     public Optional<Landmark> getLandmarkById(int id) {
        Session session=HibernateUtil.getSessionFactory().openSession();
        return
-               session.createQuery("FROM landmarks WHERE id = :id", Landmark.class)
+               session.createQuery("FROM Landmark WHERE id = :id", Landmark.class)
                .setParameter("id", id)
                .uniqueResultOptional();
     }
@@ -54,14 +54,14 @@ public class LandmarkRepoImpl implements LandmarkRepo{
     @Override
     public List<Landmark> getAll() {
         Session session=HibernateUtil.getSessionFactory().openSession();
-        return session.createQuery("FROM landmarks", Landmark.class)
+        return session.createQuery("FROM Landmark", Landmark.class)
                 .getResultList();
     }
 
     @Override
     public List<Landmark> getLandmarkByCategory(Category category) {
         Session session=HibernateUtil.getSessionFactory().openSession();
-        return session.createQuery("FROM landmarks where category=:category", Landmark.class)
+        return session.createQuery("FROM Landmark where category=:category", Landmark.class)
                 .setParameter("category",category)
                 .getResultList();
     }

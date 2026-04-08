@@ -1,5 +1,6 @@
 package util;
 
+import model.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -10,7 +11,8 @@ public class HibernateUtil {
     public static SessionFactory getSessionFactory(){
         if(sessionFactory==null){
             Configuration configuration= new Configuration();
-            configuration.addAnnotatedClass(model.User.class);
+            configuration.addAnnotatedClass(User.class);
+            configuration.addAnnotatedClass(Landmark.class);
             sessionFactory= configuration.buildSessionFactory();
         }
 
