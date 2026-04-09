@@ -1,7 +1,7 @@
 package service;
 
 import model.Landmark;
-import Enum.Category;
+import Enum.*;
 import model.User;
 import repository.LandmarkRepo;
 import repository.LandmarkRepoImpl;
@@ -52,4 +52,16 @@ public class LandmarkServiceImpl implements LandmarkService{
     public List<Landmark> getLandmarksByCategory(Category category) {
         return landmarkRepo.getLandmarkByCategory(category);
     }
+
+    @Override
+    public List<Landmark> getLandmarksByCity(City city) {
+        return landmarkRepo.getLandmarkByCity(city);
+    }
+
+    @Override
+    public List<Landmark> getLandmarksByProvince(Province province) {
+        return landmarkRepo.getLandmarkByProvince(province);
+    }
+
+
 }

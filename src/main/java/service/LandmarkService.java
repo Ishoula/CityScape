@@ -1,7 +1,7 @@
 package service;
 
 import model.Landmark;
-import Enum.Category;
+import Enum.*;
 import java.util.*;
 
 public interface LandmarkService {
@@ -11,4 +11,6 @@ public interface LandmarkService {
     boolean deleteLandmark(int id);
     List<Landmark> getAllLandmarks();
     List<Landmark> getLandmarksByCategory(Category category);
+    List<Landmark> getLandmarksByCity(City city);
+    List<Landmark> getLandmarksByProvince(Province province);
 }

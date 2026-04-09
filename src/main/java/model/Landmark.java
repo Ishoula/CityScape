@@ -10,39 +10,48 @@ public class Landmark {
     private int id;
     private String name;
     private Category category;
+    @Column(columnDefinition = "TEXT")
     private String description;
-    private String latitude;
-    private String longitude;
-    private String imagePath;
+    private String imageName;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    @Embedded
+    private Address address;
+
 
     public Landmark(){
 
     }
 
-    public Landmark(int id, String name, Category category, String description, String latitude, String longitude, String imagePath) {
+    public Landmark(int id, String name, Category category, String description, String imageName, Address address) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.description = description;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.imagePath = imagePath;
+        this.address=address;
+        this.imageName = imageName;
     }
 
-    public Landmark(String name, Category category, String description, String latitude, String longitude, String imagePath) {
+    public Landmark(String name, Category category, String description, String imageName,Address address) {
         this.name = name;
         this.category = category;
         this.description = description;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.imagePath = imagePath;
+        this.address=address;
+        this.imageName = imageName;
     }
-    public Landmark(int id,String name, Category category, String description, String latitude, String longitude) {
+    public Landmark(int id,String name, Category category, String description, Address address) {
         this.name = name;
         this.category = category;
         this.description = description;
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.address=address;
+
 
     }
 
@@ -78,27 +87,11 @@ public class Landmark {
         this.description = description;
     }
 
-    public String getLatitude() {
-        return latitude;
+    public String getImageName() {
+        return imageName;
     }
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 }

@@ -3,21 +3,25 @@ package controller;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+import model.Landmark;
 import model.User;
+import repository.LandmarkRepoImpl;
 import service.*;
 import repository.UserRepoImpl;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 @WebServlet("/admin/*")
 public class UserController extends HttpServlet {
 
     private UserService userService;
-
+    private LandmarkService landmarkService;
     @Override
     public void init() {
         this.userService = new UserServiceImpl(new UserRepoImpl());
+        this.landmarkService=new LandmarkServiceImpl(new LandmarkRepoImpl());
     }
 
     @Override
@@ -82,6 +86,9 @@ public class UserController extends HttpServlet {
         if (user.isPresent()) {
             HttpSession session = req.getSession();
             session.setAttribute("user", user.get());
+            List<Landmark> landmarks = landmarkService.getAllLandmarks();
+            session.setAttribute("landmarks", landmarks);
+
             resp.sendRedirect(req.getContextPath() + "/admin/dashboard");
         } else {
             resp.sendRedirect(req.getContextPath() + "/admin/login?error=invalid");

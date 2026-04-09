@@ -1,7 +1,7 @@
 package repository;
 
 import model.Landmark;
-import Enum.Category;
+import Enum.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
@@ -63,6 +63,22 @@ public class LandmarkRepoImpl implements LandmarkRepo{
         Session session=HibernateUtil.getSessionFactory().openSession();
         return session.createQuery("FROM Landmark where category=:category", Landmark.class)
                 .setParameter("category",category)
+                .getResultList();
+    }
+
+    @Override
+    public List<Landmark> getLandmarkByCity(City city) {
+        Session session=HibernateUtil.getSessionFactory().openSession();
+        return session.createQuery("from Landmark l where l.address.city=:city",Landmark.class)
+                .setParameter("city",city)
+                .getResultList();
+    }
+
+    @Override
+    public List<Landmark> getLandmarkByProvince(Province province) {
+        Session session=HibernateUtil.getSessionFactory().openSession();
+        return session.createQuery("from Landmark l where l.address.province=:province",Landmark.class)
+                .setParameter("province",province)
                 .getResultList();
     }
 

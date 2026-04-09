@@ -19,7 +19,7 @@
                 <i class="fa-solid fa-map-location-dot"></i> CityScape
             </a>
             <h2 class="text-2xl font-bold text-gray-800 mt-4">Welcome Back</h2>
-            <p class="text-gray-500">Login to manage your trips</p>
+            <p class="text-gray-500">Login to access the admin portal</p>
         </div>
 
         <%-- Error Message Handling --%>
@@ -48,10 +48,7 @@
             </button>
         </form>
 
-        <p class="text-center text-gray-600 mt-8">
-            Don't have an account?
-            <a href="<c:url value='/admin/register'/>"  class="text-blue-600 font-bold hover:underline">Sign Up</a>
-        </p>
+
     </div>
 </body>
 </html>

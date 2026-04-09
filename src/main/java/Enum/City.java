@@ -1,0 +1,43 @@
+package Enum;
+
+public enum City{
+    // KIGALI CITY
+    NYARUGENGE,
+    KICUKIRO,
+    GASABO,
+
+    // NORTHERN PROVINCE
+    RULINDO,
+    GAKENKE,
+    MUSANZE,
+    BURERA,
+    GICUMBI,
+
+    // SOUTHERN PROVINCE
+    KAMONYI,
+    MUHANGA,
+    RUHANGO,
+    NYANZA,
+    HUYE,
+    NYAMAGABE,
+    GISAGARA,
+    NYARUGURU,
+
+    // WESTERN PROVINCE
+    KARONGI,
+    NGORORERO,
+    RUTSIRO,
+    RUBAVU,
+    RUSIZI,
+    NYAMASHEKE,
+    NYABIHU,
+
+    // EASTERN PROVINCE
+    NYAGATARE,
+    GATSIBO,
+    KAYONZA,
+    RWAMAGANA,
+    BUGESERA,
+    NGOMA,
+    KIREHE
+}

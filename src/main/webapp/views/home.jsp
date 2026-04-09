@@ -93,13 +93,13 @@
                     <%-- Media Container (Image and Map) --%>
                     <div class="card-media-container overflow-hidden">
                         <img id="img-${landmark.id}"
-                             src="<c:url value='/uploads/${landmark.imagePath}'/>"
+                             src="<c:url value='/uploads/${landmark.imageName}'/>"
                              class="w-full h-full object-cover transition duration-500"
                              alt="${landmark.name}">
 
                         <div id="map-${landmark.id}" class="map-frame hidden"></div>
 
-                        <button onclick="toggleMap(${landmark.id}, ${landmark.latitude}, ${landmark.longitude}, '${landmark.name}')"
+                        <button onclick="toggleMap(${landmark.id}, ${landmark.address.latitude}, ${landmark.address.longitude}, '${landmark.name}')"
                                 class="absolute bottom-4 right-4 z-20 bg-white/90 backdrop-blur text-blue-600 p-2 rounded-full shadow-lg hover:bg-blue-600 hover:text-white transition-all">
                             <i class="fa-solid fa-map-location-dot"></i>
                         </button>
@@ -116,7 +116,8 @@
 
                         <div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
                             <div class="text-xs text-gray-400">
-                                <i class="fa-solid fa-earth-americas mr-1"></i> ${landmark.latitude}, ${landmark.longitude}
+
+                                <i class="fa-solid fa-earth-americas mr-1"></i> ${landmark.address.latitude}, ${landmark.address.longitude}
                             </div>
 
                             <%-- Admin Controls --%>

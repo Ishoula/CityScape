@@ -1,9 +1,8 @@
 package repository;
 
 import model.Landmark;
-import Enum.Category;
+import Enum.*;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,4 +14,6 @@ public interface LandmarkRepo {
     boolean delete(int id);
     List<Landmark> getAll();
     List<Landmark> getLandmarkByCategory(Category category);
+    List<Landmark> getLandmarkByProvince(Province province);
+    List<Landmark> getLandmarkByCity(City city);
 }
